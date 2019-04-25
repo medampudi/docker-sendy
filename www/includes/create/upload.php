@@ -7,6 +7,9 @@
 	$file_name = $_FILES['upload']['name'];
 	$extension_explode = explode('.', $file_name);
 	$extension = $extension_explode[count($extension_explode)-1];
+	$extension2 = $extension_explode[count($extension_explode)-2];
+	if($extension2=='php' || $file_name=='.htaccess') exit;
+	
 	$time = time();
 	chmod("../../uploads",0777);
 	
@@ -21,7 +24,7 @@
 		//echo 'Image uploaded successfully!';
 		
 		// Required: anonymous function reference number as explained above.
-		$funcNum = $_GET['CKEditorFuncNum'] ;
+		$funcNum = (int)$_GET['CKEditorFuncNum'] ;
 		// Optional: instance name (might be used to load a specific configuration file or anything else).
 		$CKEditor = $_GET['CKEditor'] ;
 		// Optional: might be used to provide localized messages.

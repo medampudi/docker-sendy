@@ -1,9 +1,9 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER Emmanuel Marboeuf <emmanuel@visage.job>
 
 # Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 php7.0 mysql-client php7.0-mysql libapache2-mod-php7.0 php-curl curl lynx-cur php7.0-xml cron
+    apache2 php7.0 mysql-client php7.0-mysql libapache2-mod-php7.0 php-curl curl lynx-common lynx php7.0-xml cron
 
 # Enable apache mods.
 RUN a2enmod php7.0

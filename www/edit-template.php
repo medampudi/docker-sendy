@@ -31,7 +31,7 @@
 ?>
 
 <script src="<?php echo get_app_info('path');?>/js/ckeditor/ckeditor.js?7"></script>
-<script src="<?php echo get_app_info('path');?>/js/create/editor.js?7"></script>
+<script src="<?php echo get_app_info('path');?>/js/create/editor.js?97"></script>
 
 <!-- Validation -->
 <script type="text/javascript" src="<?php echo get_app_info('path');?>/js/validate.js"></script>
@@ -63,7 +63,13 @@
 	    <div class="row-fluid">
 		    <div class="span10">
 			    <div>
-			    	<p class="lead"><?php echo get_app_data('app_name');?></p>
+			    	<p class="lead">
+		    	<?php if(get_app_info('is_sub_user')):?>
+			    	<?php echo get_app_data('app_name');?>
+		    	<?php else:?>
+			    	<a href="<?php echo get_app_info('path'); ?>/edit-brand?i=<?php echo get_app_info('app');?>" data-placement="right" title="<?php echo _('Edit brand settings');?>"><?php echo get_app_data('app_name');?></a>
+		    	<?php endif;?>
+		    </p>
 		    	</div>
 		    	<h2><?php echo _('Edit template');?></h2><br/>
 		    </div>

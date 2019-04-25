@@ -5,7 +5,7 @@ $(document).ready(
 			fullPage: true,
 			allowedContent: true,
 			filebrowserUploadUrl: 'includes/create/upload.php',
-			height: '290px',
+			height: '350px',
 			extraPlugins: 'codemirror,dragresize'
 			
 		});
@@ -13,14 +13,14 @@ $(document).ready(
 			fullPage: true,
 			allowedContent: true,
 			filebrowserUploadUrl: 'includes/create/upload.php',
-			height: '377px',
+			height: '350px',
 			extraPlugins: 'codemirror'
 		});
 		CKEDITOR.replace( 'confirmation_email', {
 			fullPage: true,
 			allowedContent: true,
 			filebrowserUploadUrl: 'includes/create/upload.php',
-			height: '289px',
+			height: '350px',
 			extraPlugins: 'codemirror'
 		});
 	}
